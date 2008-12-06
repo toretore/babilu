@@ -1,7 +1,17 @@
 I18nJs
 =======
 
-TBD
+I18nJs converts all your translations into JavaScript so you can use them on
+the client side. It mimicks the Ruby I18n API and works in pretty much the
+same way:
+
+//JavaScript
+I18n.defaultLocale // "en"
+I18n.locale // Whatever the locale has been set to on the server
+
+I18n.t('hello') // "Hello World"
+I18n.t('messages.invalid', {scope:['activerecord', 'errors']})  // "is invalid"
+I18n.t('activerecord.errors.template.header', {count:4, model:'horse'}) // "4 errors prohibited this horse from being saved"
 
 
 Example
