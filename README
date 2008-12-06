@@ -13,6 +13,15 @@ I18n.t('hello') // "Hello World"
 I18n.t('messages.invalid', {scope:['activerecord', 'errors']})  // "is invalid"
 I18n.t('activerecord.errors.template.header', {count:4, model:'horse'}) // "4 errors prohibited this horse from being saved"
 
+The only difference is that because JavaScript doesn't have symbols we can't
+easily differentiate between keys and values in the "default" option. A workaround
+is used in which strings starting with ":" are considered to be keys and are used for
+looking up additional translations:
+
+I18n.t('doesntexist', {default:'humbaba'}) // "humbaba"
+I18n.t('doesntexist', {default:':hello'}) // "Hello world"
+I18n.t('doesntexist', {default:[':alsodoesntexist', 'The Sasqutch: Fact or Fiction?']}) // "The Sasquatch: Fact or Fiction?"
+
 
 Example
 =======
