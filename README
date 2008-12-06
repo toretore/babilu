@@ -22,5 +22,7 @@ I18n.t('doesntexist', {default:'humbaba'}) // "humbaba"
 I18n.t('doesntexist', {default:':hello'}) // "Hello world"
 I18n.t('doesntexist', {default:[':alsodoesntexist', 'The Sasqutch: Fact or Fiction?']}) // "The Sasquatch: Fact or Fiction?"
 
+This plugin depends on http://github.com/toretore/lucy
+
 
 Copyright (c) 2008 Tore Darell, released under the MIT license
