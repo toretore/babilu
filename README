@@ -11,7 +11,10 @@ I18n.locale // Whatever the locale has been set to on the server
 
 I18n.t('hello') // "Hello World"
 I18n.t('messages.invalid', {scope:['activerecord', 'errors']})  // "is invalid"
-I18n.t('activerecord.errors.template.header', {count:4, model:'horse'}) // "4 errors prohibited this horse from being saved"
+I18n.t('activerecord.errors.template.header', {count:4, model:'pony'}) // "4 errors prohibited this pony from being saved"
+
+I18n.translations.en.ponies: {one: 'I have a pony', other: 'I have {{count}} ponies'};
+I18n.t('ponies', {count:5}) // "I have 5 ponies"
 
 The only difference is that because JavaScript doesn't have symbols we can't
 easily differentiate between keys and values in the "defaultValue" option. A workaround
