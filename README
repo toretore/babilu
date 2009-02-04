@@ -1,8 +1,8 @@
-I18nJs
+Babilu
 =======
 
-I18nJs converts all your translations into JavaScript so you can use them on
-the client side. It mimicks the Ruby I18n API and works in pretty much the
+Babilu converts all your translations into JavaScript so you can use them on
+the client side. It mimicks the Ruby/Rails I18n API and works in pretty much the
 same way:
 
 //JavaScript
