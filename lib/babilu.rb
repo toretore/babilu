@@ -1,7 +1,7 @@
 require "i18n_extensions"
-module I18nJs
+module Babilu
 
-  JAVASCRIPT = File.read(File.join(File.dirname(__FILE__), 'javascripts', 'i18n.js'));
+  JAVASCRIPT = File.read(File.join(File.dirname(__FILE__), 'javascripts', 'babilu.js'));
 
   def self.generate
     Lucy.generate("locales") do |g|
@@ -40,11 +40,11 @@ module I18nJs
 
     #In development mode, re-generate locale data on each request
     def generate_locale_javascript
-      I18nJs.generate
+      Babilu.generate
     end
 
   end
 
 end
 
-ActionController::Base.send(:include, I18nJs::ControllerMethods)
+ActionController::Base.send(:include, Babilu::ControllerMethods)
