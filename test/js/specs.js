@@ -132,8 +132,8 @@ describe('I18n.translate', {
   },
 
   'should apply the same scope to the defaultValue as to the key itself': function(){
-  //  expect(I18n.t('humbaba', {scope:'foo.bar', defaultValue:':baz'})).should_be('Found me');
-  //  expect(I18n.t('humbaba', {scope:['foo', 'bar'], defaultValue:[':baf', ':baz']})).should_be('Found me');
+    expect(I18n.t('humbaba', {scope:'foo.bar', defaultValue:':baz'})).should_be('Found me');
+    expect(I18n.t('humbaba', {scope:['foo', 'bar'], defaultValue:[':baf', ':baz']})).should_be('Found me');
   },
 
   'should pluralize when the count option is given': function(){
