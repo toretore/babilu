@@ -1,8 +1,10 @@
 Babilu
 =======
 
-Babilu converts all your translations into JavaScript so you can use them on
-the client side. It mimicks the Ruby/Rails I18n API and works in pretty much the
+Babilu converts all your needed translations into JavaScript so you can use them on
+the client side. To calculate the needed translations it looks for references to I18n.t() or I18n.translate() -
+
+It mimicks the Ruby/Rails I18n API and works in pretty much the
 same way:
 
 //JavaScript
