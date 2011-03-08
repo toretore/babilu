@@ -10,10 +10,10 @@ translations = {
       one: 'pony',
       other: 'ponies'
     },
-    welcome: 'Welcome, {{name}}!',
+    welcome: 'Welcome, %{name}!',
     forest_howto: {
-      one: 'Go north {{count}} league until you see the tall cedars',
-      other: 'Go north {{count}} leagues until you see the tall cedars'
+      one: 'Go north %{count} league until you see the tall cedars',
+      other: 'Go north %{count} leagues until you see the tall cedars'
     }
   },
   no: {
@@ -143,11 +143,11 @@ describe('I18n.translate', {
     expect(I18n.t('pony', {count:0})).should_be('ponies');
   },
 
-  'should interpolate values inside {{ and }} in the translation string if a value is given in the options': function(){
+  'should interpolate values inside %{ and } in the translation string if a value is given in the options': function(){
     expect(I18n.t('welcome', {name:'Enkidu'})).should_be('Welcome, Enkidu!');
   },
 
-  'should interpolate {{count}} as well as pluralize it': function(){
+  'should interpolate %{count} as well as pluralize it': function(){
     expect(I18n.t('forest_howto', {count:1000})).should_be('Go north 1000 leagues until you see the tall cedars');
   }
 
