@@ -88,6 +88,7 @@ describe('I18n.pluralize', {
 
   'should return value.other when count is not 1': function(){
     expect(I18n.pluralize(translations.en.pony, 3)).should_be('ponies');
+    expect(I18n.pluralize(translations.en.pony, 0)).should_be('ponies');
   }
 
 });
@@ -139,6 +140,7 @@ describe('I18n.translate', {
   'should pluralize when the count option is given': function(){
     expect(I18n.t('pony', {count:1})).should_be('pony');
     expect(I18n.t('pony', {count:3})).should_be('ponies');
+    expect(I18n.t('pony', {count:0})).should_be('ponies');
   },
 
   'should interpolate values inside {{ and }} in the translation string if a value is given in the options': function(){
