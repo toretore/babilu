@@ -149,6 +149,7 @@ describe('I18n.translate', {
 
   'should interpolate %{count} as well as pluralize it': function(){
     expect(I18n.t('forest_howto', {count:1000})).should_be('Go north 1000 leagues until you see the tall cedars');
+    expect(I18n.t('forest_howto', {count:0})).should_be('Go north 0 leagues until you see the tall cedars');
   }
 
 });
