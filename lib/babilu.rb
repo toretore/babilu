@@ -1,7 +1,8 @@
+require "lucy"
 require "i18n_extensions"
 module Babilu
 
-  JAVASCRIPT = File.read(File.join(File.dirname(__FILE__), 'javascripts', 'babilu.js'));
+  JAVASCRIPT = File.read(File.join(File.dirname(__FILE__), 'javascripts', 'babilu.js'))
 
   def self.generate
     Lucy.generate("locales") do |g|
@@ -44,6 +45,12 @@ module Babilu
     end
 
   end
+
+  class Railtie < Rails::Railtie
+    config.before_configuration do
+      config.action_view.javascript_expansions[:defaults] ||= [] << 'locales'
+    end
+  end if defined?(Rails::Railtie)
 
 end
 
