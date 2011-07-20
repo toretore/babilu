@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Tore Darell"]
-  s.date = %q{2011-03-20}
+  s.authors = ["Tore Darell", "Peter Zotov"]
+  s.date = %q{2011-07-20}
   s.description = %q{Babilu converts all your translations into JavaScript so you can use them on the client side. It mimicks the Ruby/Rails I18n API and works in pretty much the same way}
   s.email = %q{}
   s.extra_rdoc_files = [
@@ -20,11 +20,13 @@ Gem::Specification.new do |s|
     "README",
     "Rakefile",
     "VERSION",
+    "babilu.gemspec",
     "init.rb",
     "lib/babilu.rb",
-    "lib/i18n_extensions.rb",
+    "lib/babilu/generator.rb",
+    "lib/babilu/i18n_extensions.rb",
+    "lib/babilu/include_tag_helper.rb",
     "lib/javascripts/babilu.js",
-    "lib/tasks/i18n_js_tasks.rake",
     "test/babilu_test.rb",
     "test/js/JSSpec.css",
     "test/js/JSSpec.js",
@@ -33,18 +35,13 @@ Gem::Specification.new do |s|
     "test/js/test.html",
     "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/toretore/babilu}
+  s.homepage = %q{http://github.com/whitequark/babilu}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Rails plugin for javascript i18n}
-  s.test_files = [
-    "test/babilu_test.rb",
-    "test/test_helper.rb"
-  ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then

@@ -1,5 +1,5 @@
 Babilu
-=======
+======
 
 Babilu converts all your translations into JavaScript so you can use them on
 the client side. It mimicks the Ruby/Rails I18n API and works in pretty much the
@@ -26,6 +26,5 @@ I18n.t('doesntexist', {defaultValue:':hello'}) // "Hello world"
 I18n.t('doesntexist', {defaultValue:[':alsodoesntexist', 'The Sasqutch: Fact or Fiction?']}) // "The Sasquatch: Fact or Fiction?"
 
 This plugin depends on http://github.com/toretore/lucy
-
 
 Copyright (c) 2008 Tore Darell, released under the MIT license
