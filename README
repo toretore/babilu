@@ -25,6 +25,21 @@ I18n.t('doesntexist', {defaultValue:'humbaba'}) // "humbaba"
 I18n.t('doesntexist', {defaultValue:':hello'}) // "Hello world"
 I18n.t('doesntexist', {defaultValue:[':alsodoesntexist', 'The Sasqutch: Fact or Fiction?']}) // "The Sasquatch: Fact or Fiction?"
 
-This plugin depends on http://github.com/toretore/lucy
+This plugin depends on http://github.com/whitequark/lucy
+
+Rails 3 notes
+=============
+
+If you want to use Babilu with Rails 3 asset pipeline, you need to use lucy
+from my fork, adding a line like this in Gemfile:
+gem 'lucy', :git => 'git://github.com/whitequark/lucy.git'
+
+Note that locales.js gets placed to /app/assets/javascripts.
+It will be regenerated on each request in development mode.
+
+For Babilu to work in production mode, you need to add an initializer like this:
+
+    # config/initializers/babilu.rb
+    Babilu::Generator.generate
 
 Copyright (c) 2008 Tore Darell, released under the MIT license
