@@ -5,6 +5,7 @@ module Babilu
     class << self
       def included(base)
         base.send :extend, ClassMethods
+        base.send :include, InstanceMethods
       end
 
       def generate
@@ -34,10 +35,12 @@ module Babilu
     end
 
     module ClassMethods
-      def self.included(controller)
+      def self.extended(controller)
         controller.send(:after_filter, :set_locale_cookie)
       end
+    end
 
+    module InstanceMethods
       private
 
       def set_locale_cookie
