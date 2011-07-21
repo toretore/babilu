@@ -41,9 +41,6 @@ layout. It will expand to javascript_include_tag 'babilu' on Rails <3.1, and to
 empty string on Rails 3.1, but is still required to regenerate the file in
 development mode.
 
-For Babilu to work in production mode, you need to add an initializer like this:
-
-    # config/initializers/babilu.rb
-    Babilu::Generator.generate
+In production mode, locales.js will be generated automatically at startup.
 
 Copyright (c) 2008 Tore Darell, released under the MIT license
