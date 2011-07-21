@@ -30,12 +30,16 @@ This plugin depends on http://github.com/whitequark/lucy
 Rails 3 notes
 =============
 
-If you want to use Babilu with Rails 3 asset pipeline, you need to use lucy
+If you want to use Babilu with Rails 3.1 asset pipeline, you need to use lucy
 from my fork, adding a line like this in Gemfile:
 gem 'lucy', :git => 'git://github.com/whitequark/lucy.git'
 
 Note that locales.js gets placed to /app/assets/javascripts.
-It will be regenerated on each request in development mode.
+
+After that, you'll need to add <%= babilu_include_tag %> to the <head> of your
+layout. It will expand to javascript_include_tag 'babilu' on Rails <3.1, and to
+empty string on Rails 3.1, but is still required to regenerate the file in
+development mode.
 
 For Babilu to work in production mode, you need to add an initializer like this:
 
