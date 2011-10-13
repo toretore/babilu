@@ -1,5 +1,5 @@
 Babilu
-=======
+======
 
 Babilu converts all your translations into JavaScript so you can use them on
 the client side. It mimicks the Ruby/Rails I18n API and works in pretty much the
@@ -25,7 +25,22 @@ I18n.t('doesntexist', {defaultValue:'humbaba'}) // "humbaba"
 I18n.t('doesntexist', {defaultValue:':hello'}) // "Hello world"
 I18n.t('doesntexist', {defaultValue:[':alsodoesntexist', 'The Sasqutch: Fact or Fiction?']}) // "The Sasquatch: Fact or Fiction?"
 
-This plugin depends on http://github.com/toretore/lucy
+This plugin depends on http://github.com/whitequark/lucy
 
+Rails 3 notes
+=============
+
+If you want to use Babilu with Rails 3.1 asset pipeline, you need to use lucy
+from my fork, adding a line like this in Gemfile:
+gem 'lucy', :git => 'git://github.com/whitequark/lucy.git'
+
+Note that locales.js gets placed to /app/assets/javascripts.
+
+After that, you'll need to add <%= babilu_include_tag %> to the <head> of your
+layout. It will expand to javascript_include_tag 'babilu' on Rails <3.1, and to
+empty string on Rails 3.1, but is still required to regenerate the file in
+development mode.
+
+In production mode, locales.js will be generated automatically at startup.
 
 Copyright (c) 2008 Tore Darell, released under the MIT license
